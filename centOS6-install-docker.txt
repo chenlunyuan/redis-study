@@ -1,0 +1,10 @@
+1、安装带aufs模块的内核 (不清楚啥是aufs)
+2、cd /etc/yum.repos.d
+3、wget http://www.hop5.in/yum/el6/hop5.repo
+4、yum install kernel-ml-aufs kernel-ml-aufs-devel
+5、修改grub主配置文件/etc/grub.conf，设置default=0，表示第一个title下的内容为默认启动的kernel
+6、reboot 检查内核是否升级，是否支持aufs grep aufs /proc/filesystems
+7、install docker 
+  a> 安装Fedora EPEL源 rpm -ivh http://mirrors.sohu.com/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm
+  b> 安装docker-io yum -y install docker-io
+  c> 启动docker service docker start
